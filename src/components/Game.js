@@ -1,21 +1,39 @@
-import React from 'react';
+import React , {useEffect}from 'react';
 import { View, Text, StyleSheet, Pressable, Image, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {DateTime} from 'luxon';
 
 import constants from '../utils/contants';
+import axios from '../utils/axios'
 
 const Luxon = DateTime.local().setLocale('es');
 
 const Game = ({ game, navigation}) => {
 
-    const { name, background_image, rating, released} = game;
+    const { name, background_image, rating, released } = game;
 
     const date = DateTime.fromISO(released).setLocale('es').toFormat('MMM dd, y');
 
+    const [newGame, setGame] = React.useState([]);
+
+    useEffect(() =>{
+        axios
+            .get(`games/${game.id}`)
+            .then((res)=>{
+                setGame(res.data);
+            })
+            .catch((err)=> console.log(err));
+    },[setGame]);
+
+
+    const loadGame = () =>{
+        navigation.navigate(constants.SCREEN.DETAILS, {
+            newGame
+        });
+    }
 
     return (
-        <Pressable style={styles.card}>
+        <Pressable style={styles.card} onPress={loadGame}>
             <ImageBackground 
             style={styles.poster}
             source={{uri:background_image}}
@@ -94,7 +112,6 @@ const styles = StyleSheet.create({
     },
     gradient: {
         height: 152,
-        
     }
 });
 

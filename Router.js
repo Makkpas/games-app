@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text } from 'react-native'
 
-import { HomeScreen } from './src/screens/HomeScreen';
+import { HomeScreen, DetailsScreen } from './src/screens';
 
 import constants from './src/utils/contants';
 
@@ -22,6 +22,16 @@ const Router = () => {
                         headerShown:false,
                     }}
                 />
+                <Stack.Screen 
+                        name={constants.SCREEN.DETAILS} 
+                        component={ DetailsScreen } 
+                        options={{
+                            title:'',
+                            headerTransparent: true,
+                            headerBackTitle: false,
+
+                        }}
+                    />
             </Stack.Navigator>
         </NavigationContainer>
     )

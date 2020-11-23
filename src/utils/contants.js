@@ -12,6 +12,7 @@ module.exports = {
 		LIGHT: '#FFFFFF',
 		PURPLE: '#220084',
         PURPLE_BACK: '#240F62',
+        PURPLE_BACK2: '#240F62aa',
         PURPLE_AUX:'#8057F6',
 		TEXT_COLOR: '#121212',
 	},

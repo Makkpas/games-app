@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { View, Text, StyleSheet, FlatList, StatusBar } from 'react-native'
 
 import Game from '../components/Game';
 
@@ -19,11 +19,12 @@ export const HomeScreen = ({navigation}) => {
         .catch((err)=>console.log(err));
     }, [setGames]);
 
-    console.log(games);
-
-    
     return (
         <View style={styles.container}>
+            <StatusBar
+                barStyle="light-content'"
+                backgroundColor="#240F62"
+            />
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>GAMES</Text>
             </View>
@@ -41,8 +42,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: constants.COLORS.PURPLE_BACK,
-        marginTop: 32,
-
     },
     titleContainer: {
         paddingHorizontal: 25,
@@ -58,6 +57,9 @@ const styles = StyleSheet.create({
     list: {
         paddingHorizontal: 20,
     },
+    prueba: {
+        borderRadius: 8,
+    }
 });
-   
+
 
