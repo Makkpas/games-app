@@ -2,7 +2,7 @@ import React , {useEffect} from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, Item } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {DateTime} from 'luxon';
-import { MaterialIcons, Entypo } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import axios from '../utils/axios'
 
 import constants from '../utils/contants';

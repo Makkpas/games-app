@@ -34,7 +34,9 @@ export const HomeScreen = ({navigation}) => {
                 renderItem={({ item }) => <Game {...{game: item, navigation: navigation}}/>}
                 keyExtractor = {(item) =>`${item.id}`}
             />
+            
         </View>
+        
     )
 }
 
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
     },
     list: {
         paddingHorizontal: 20,
+        marginBottom: 50,
     },
     prueba: {
         borderRadius: 8,

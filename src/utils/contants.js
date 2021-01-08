@@ -2,6 +2,9 @@ module.exports = {
 	SCREEN: {
 		HOME: 'Home',
 		DETAILS: 'Details',
+		PROFILE: 'Profile',
+		EDITPROFILE: 'EditProfile',
+		LIBRARY: 'Library',
     },
 	API_KEY: 'b795f20c03964e74b458672989895bd1',
 	COLORS: {
